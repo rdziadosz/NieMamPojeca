@@ -17,7 +17,6 @@ public class Main {
 		BufferedReader br = new BufferedReader(new FileReader("/home/szymcio/eclipse-workspace/NieMamPojecia/src/in2.txt"));
 		List<String> solutions = new ArrayList<>();
 		try {
-		    StringBuilder sb = new StringBuilder();
 		    
 		    String line = br.readLine();
 		    String temp = "";
@@ -37,7 +36,6 @@ public class Main {
 			    	String numberBefore = temp.substring(temp.length() -2);
 			    	
 			    	int pow = Integer.parseInt(line);
-			    	System.out.println(pow);
 			    	
 			    	for(int i=0;i<pow-1;i++) {
 			    		temp += "*" + numberBefore;
