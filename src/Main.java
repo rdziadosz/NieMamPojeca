@@ -14,7 +14,7 @@ import javax.script.ScriptException;
 
 public class Main {
 	public static void main(String[] args) throws IOException, ScriptException {
-		BufferedReader br = new BufferedReader(new FileReader("/home/szymcio/eclipse-workspace/NieMamPojecia/src/testin.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("/home/szymcio/eclipse-workspace/NieMamPojecia/src/in3.txt"));
 		List<String> solutions = new ArrayList<>();
 		try {
 		    StringBuilder sb = new StringBuilder();
@@ -35,12 +35,14 @@ public class Main {
 			    }else if(parseLine.trim().equals("^")){
 			    	line = br.readLine();
 			    	String numberBefore = temp.substring(temp.length() -2);
-			    	System.out.println(numberBefore);
+			    	
 			    	int pow = Integer.parseInt(line);
-			    	for(int i=0;i<pow;i++) {
+			    	System.out.println(pow);
+			    	
+			    	for(int i=0;i<pow-1;i++) {
 			    		temp += "*" + numberBefore;
 			    	}
-			    	temp = "";
+			    	solutions.add(temp);
 			    }else if(parseLine.trim().equals("5")){
 			    	if(temp.equals("")) {
 			    		line = br.readLine();
@@ -61,7 +63,7 @@ public class Main {
 		
 		Iterator<String> iter = solutions.iterator();
 		System.out.println("asd");
-		PrintWriter writer = new PrintWriter("/home/szymcio/eclipse-workspace/NieMamPojecia/src/asdsa.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("/home/szymcio/eclipse-workspace/NieMamPojecia/src/out3.txt", "UTF-8");
 		
 		while(iter.hasNext()) {
 			String a = iter.next();
