@@ -14,7 +14,7 @@ import javax.script.ScriptException;
 
 public class Main {
 	public static void main(String[] args) throws IOException, ScriptException {
-		BufferedReader br = new BufferedReader(new FileReader("/home/szymcio/eclipse-workspace/NieMamPojecia/src/testin.txt"));
+		BufferedReader br = new BufferedReader(new FileReader(args[0]));
 		List<String> solutions = new ArrayList<>();
 		try {
 		    StringBuilder sb = new StringBuilder();
