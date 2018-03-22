@@ -14,7 +14,7 @@ import javax.script.ScriptException;
 
 public class Main {
 	public static void main(String[] args) throws IOException, ScriptException {
-		BufferedReader br = new BufferedReader(new FileReader("/home/szymcio/eclipse-workspace/NieMamPojecia/src/in3.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("/home/szymcio/eclipse-workspace/NieMamPojecia/src/in2.txt"));
 		List<String> solutions = new ArrayList<>();
 		try {
 		    StringBuilder sb = new StringBuilder();
@@ -63,7 +63,7 @@ public class Main {
 		
 		Iterator<String> iter = solutions.iterator();
 		System.out.println("asd");
-		PrintWriter writer = new PrintWriter("/home/szymcio/eclipse-workspace/NieMamPojecia/src/out3.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("/home/szymcio/eclipse-workspace/NieMamPojecia/src/out2.txt", "UTF-8");
 		
 		while(iter.hasNext()) {
 			String a = iter.next();
