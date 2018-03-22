@@ -14,7 +14,7 @@ import javax.script.ScriptException;
 
 public class Main {
 	public static void main(String[] args) throws IOException, ScriptException {
-		BufferedReader br = new BufferedReader(new FileReader(args[0]));
+		BufferedReader br = new BufferedReader(new FileReader("/home/szymcio/eclipse-workspace/NieMamPojecia/src/testin.txt"));
 		List<String> solutions = new ArrayList<>();
 		try {
 		    StringBuilder sb = new StringBuilder();
@@ -31,6 +31,15 @@ public class Main {
 			    	break;
 			    }else if(parseLine.trim().equals("=")){
 			    	solutions.add(temp);
+			    	temp = "";
+			    }else if(parseLine.trim().equals("^")){
+			    	line = br.readLine();
+			    	String numberBefore = temp.substring(temp.length() -2);
+			    	System.out.println(numberBefore);
+			    	int pow = Integer.parseInt(line);
+			    	for(int i=0;i<pow;i++) {
+			    		temp += "*" + numberBefore;
+			    	}
 			    	temp = "";
 			    }else {
 			    	System.out.println(temp);
@@ -55,7 +64,9 @@ public class Main {
 			ScriptEngineManager manager = new ScriptEngineManager();
 			ScriptEngine engine = manager.getEngineByName("js");
 			Object result = engine.eval(a);
-			writer.println(result.toString());
+			if(result != null) {
+				writer.println(result.toString());
+			}
 			
 		}
 		writer.close();
