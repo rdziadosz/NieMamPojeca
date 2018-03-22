@@ -41,6 +41,12 @@ public class Main {
 			    		temp += "*" + numberBefore;
 			    	}
 			    	temp = "";
+			    }else if(parseLine.trim().equals("5")){
+			    	if(temp.equals("")) {
+			    		line = br.readLine();
+			    	}else {
+			    		temp = temp.substring(0, temp.length()-2);
+			    	}
 			    }else {
 			    	System.out.println(temp);
 			    	temp += parseLine;
