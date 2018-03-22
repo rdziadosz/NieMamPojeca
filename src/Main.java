@@ -46,7 +46,7 @@ public class Main {
 		
 		Iterator<String> iter = solutions.iterator();
 		System.out.println("asd");
-		PrintWriter writer = new PrintWriter("/home/szymcio/eclipse-workspace/NieMamPojecia/src/asdsa.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("out4.txt", "UTF-8");
 		
 		while(iter.hasNext()) {
 			String a = iter.next();
