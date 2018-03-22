@@ -2,6 +2,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -44,15 +45,22 @@ public class Main {
 		
 		Iterator<String> iter = solutions.iterator();
 		System.out.println("asd");
+		PrintWriter writer = new PrintWriter("/home/szymcio/eclipse-workspace/NieMamPojecia/src/asdsa.txt", "UTF-8");
+		
 		while(iter.hasNext()) {
 			String a = iter.next();
 			System.out.println(a);
+			ScriptEngineManager manager = new ScriptEngineManager();
+			ScriptEngine engine = manager.getEngineByName("js");
+			Object result = engine.eval(a);
+			writer.println(result.toString());
 			
 		}
+		writer.println("The first line");
+		writer.println("The second line");
+		writer.close();
 		
-		ScriptEngineManager manager = new ScriptEngineManager();
-		ScriptEngine engine = manager.getEngineByName("js");
-		Object result = engine.eval("4*5");
+		
 	}
 
 }
